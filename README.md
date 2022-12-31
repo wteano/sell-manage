@@ -1,19 +1,27 @@
 # sell-manage
 
-## Project setup
+## 项目依赖安装
+
 ```
 npm install
+或
+yarn
 ```
 
-### Compiles and hot-reloads for development
+### 项目热更新启动
+
 ```
 npm run serve
+或
+yarn serve
 ```
 
-### Compiles and minifies for production
+### 项目打包
+
 ```
 npm run build
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
