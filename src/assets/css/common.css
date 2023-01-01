@@ -1,0 +1,44 @@
+.wrap {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.dpflex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flexcol {
+  flex-direction: column;
+}
+
+/* 谷歌无滚动条 */
+.noscrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 谷歌滚动条样式 */
+.scrollBar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.show {
+  display: block !important;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
