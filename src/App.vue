@@ -6,14 +6,16 @@
 
 <style lang="less">
 #app {
+  //position: relative;
   width: 100%;
   height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  //text-align: center;
   color: #2c3e50;
 }
+
 .main {
   width: 100%;
   height: 100%;
@@ -22,8 +24,13 @@
 .noscrollBar::-webkit-scrollbar {
   display: none;
 }
+
 a {
   text-decoration: none !important;
+}
+
+.pagination {
+  padding-top: 10px;
 }
 /* 谷歌滚动条样式 */
 .scrollBar::-webkit-scrollbar {

@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "3544188",
+      "name": "金钱袋",
+      "font_class": "qian",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "12975018",
+      "name": "金钱",
+      "font_class": "jinqian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
       "icon_id": "673799",
       "name": "首页",
       "font_class": "shouye",

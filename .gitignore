@@ -1,3 +1,4 @@
+# 不擅长文件夹
 .DS_Store
 node_modules
 /dist
@@ -13,6 +14,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# 不上传单个文件（）和某些编辑器的单文件
 # Editor directories and files
 .idea
 .vscode

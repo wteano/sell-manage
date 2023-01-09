@@ -1,25 +1,36 @@
 <template>
-  <div>
-    <Echarts :data="Data"></Echarts>
+  <div class="stats">
+    <Echarts v-if="chartData.date" :chartData="chartData"></Echarts>
   </div>
 </template>
 
 <script>
-import Echarts from '@/components/Echarts.vue';
+import Echarts from '@/components/echarts/Echarts.vue';
+import { statsOrder_api } from '@/api/stats';
 export default {
+  components: {
+    Echarts
+  },
   data () {
     return {
-      Data: {
+      // date: ["2020-06-01 00:00:00", "2020-06-10 00:00:00"],
+      chartData: {
         title: '订单统计',
-        xdata: ['2022/12/09', '2022/12/11', '2022/12/13',
-          '2022/12/15', '2022/12/17', '2022/12/19', '2022/12/21'],
-        legend: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
       }
     }
   },
-  components: {
-    Echarts
+  created () {
+    this.initData()
+  },
+  methods: {
+    async initData () {
+      let { data } = await statsOrder_api()
+      // console.log(data);
+      this.chartData = { ...this.chartData, ...data }
+
+    }
   }
+
 }
 </script>
 

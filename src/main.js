@@ -15,8 +15,16 @@ import './assets/css/common.css'
 // 引入iconfont 字体图标样式
 import './assets/fonts/iconfont.css'
 
-import './utils/req.js'
+// 
+import utils from './utils/utils';
+Vue.prototype.$utils = utils
+/* //引入配置号的axios对象
+import axios from './utils/req.js'
+// 把axios挂载到Vue 的原型上
+Vue.prototype.$axios = axios */
 
+// 中央事件总线
+Vue.prototype.$bus = new Vue()
 
 new Vue({
   router,

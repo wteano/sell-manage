@@ -28,32 +28,33 @@ const utils = {
   getTime (val) {
     let date = new Date(val)   //把 传入的时间 转换为 格林威治时间
 
-    let yy = date.getFullYear();       // 年 
-    let MM = date.getMonth() + 1; //月 //月份获取的是0-11
-    let DD = date.getDate();           // 日
+    let y = date.getFullYear();       // 年 
+    let m = date.getMonth() + 1; //月 //月份获取的是0-11
+    let d = date.getDate();           // 日
     let hh = date.getHours();          // 小时
     let mm = date.getMinutes();        // 分钟
     let ss = date.getSeconds();        // 秒
     let ww = date.getDay();            // 星期几
     let ms = date.getMilliseconds();   // 毫秒
     // 添0补齐
-    MM = MM < 10 ? '0' + MM : MM;
-    DD = DD < 10 ? '0' + DD : DD;
+    m = m < 10 ? '0' + m : m;
+    d = d < 10 ? '0' + d : d;
     hh = hh < 10 ? '0' + hh : hh;
     mm = mm < 10 ? '0' + mm : mm;
     ss = ss < 10 ? '0' + ss : ss;
 
-    return (yy + '-' + MM + '-' + DD + ' ' + hh + ':' + mm + ':' + ss)
+    return (y + '-' + m + '-' + d + ' ' + hh + ':' + mm + ':' + ss)
   },
   //获取数据的数据类型=> 封装函数
   getDataType: function (data) {
+    // call，apply，bind
     let type = Object.prototype.toString.call(data)
     return type.slice(8, - 1)
   },
   // 深拷贝算法
   /* 获得一个数组 /或对象 
      返回一个 数组/或对象 */
-  deepClone: function (data) {
+  deepClone (data) {
     let newData;   // 新创建数据存储空间
     // 1.判断当前传入的数据 是 数组还是对象
     // （如果是数组，需要创建一个数组 接收老数组的数据,
@@ -74,7 +75,7 @@ const utils = {
       // 数据元素为引用数据类型， 重新调用 deepClone() 
       //当前元素/属性值是 一个 引用数据类型的数据-->递归调用 重新遍历生成 小的数组/对象对应的新小的数组和对象
       if (data[key] instanceof Object && typeof data[key] != "function") {
-        newData[key] = deepClone(data[key]);
+        newData[key] = this.deepClone(data[key]); //递归调用
       } else {
         //当前元素/属性值 是一个 基本数据类型的数据  直接写入到 新创建数组/新的对象身上
         newData[key] = data[key];
@@ -82,8 +83,11 @@ const utils = {
     }
     //循环结束：newData 新数据就组装完成了 return出去 
     return newData
+  },
+  // 处理文件的路径，获取文件名
+  getFileName (filePath) {
+    return filePath.slice(filePath.lastIndexOf('/') + 1)
   }
-
 }
 
 //  暴露这个对象
